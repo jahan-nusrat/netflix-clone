@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import instances from './axios';
 import requests from './api';
+import { BannerStyle, BannerContent, BannerTitle, BannerDes, BannerBtn, BannerFade } from './styles/BannerStyle';
 
 function Banner () {
 	const [ movies, setMovies ] = useState([]);
@@ -15,10 +16,13 @@ function Banner () {
 		}
 		fetchData();
 	}, []);
-	console.log(movies);
+
+	function truncate (str, n) {
+		return str?.length > n ? str.substr(0, n - 1) + '....' : str;
+	}
 
 	return (
-		<header
+		<BannerStyle
 			className="banner"
 			style={{
 				backgroundSize     : 'cover',
@@ -26,15 +30,17 @@ function Banner () {
 				backgroundImage    : `url("https://image.tmdb.org/t/p/original/${movies.backdrop_path}")`
 			}}
 		>
-			<div className="banner-content">
-				<h2>{movies.title || movies.original_title}</h2>
+			<BannerContent className="banner-content">
+				<BannerTitle className="banner-title">{movies.title || movies.original_title}</BannerTitle>
 				<div className="banner-btn">
-					<button className="btn">Play</button>
-					<button className="btn">My List</button>
+					<BannerBtn className="btn">Play</BannerBtn>
+					<BannerBtn className="btn">My List</BannerBtn>
 				</div>
-				<h1 className="banner-description">{movies.overview}</h1>
-			</div>
-		</header>
+				<BannerDes className="banner-description">{truncate(movies.overview, 150)}</BannerDes>
+				
+			</BannerContent>
+			<BannerFade className="banner-fade" />
+		</BannerStyle>
 	);
 }
 

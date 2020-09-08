@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const StyleRow = styled.div`margin-left: 20px;`;
+export const StyleRow = styled.div`
+	margin-left: 20px;
+	color: #fff;
+`;
 
 export const ImgPoster = styled.img`
 	width: 100%;

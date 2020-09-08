@@ -3,10 +3,11 @@ import Row from './Row';
 import requests from './api';
 import './styles/App.css';
 import Banner from './Banner';
+import { StyleApp } from './styles/AppStyle';
 
 function App () {
 	return (
-		<div className="app">
+		<StyleApp className="app">
 			<Banner />
 			<Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow={true} />
 			<Row title="Trending Now" fetchUrl={requests.fetchTrending} />
@@ -16,7 +17,7 @@ function App () {
 			<Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
 			<Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
 			<Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-		</div>
+		</StyleApp>
 	);
 }
 

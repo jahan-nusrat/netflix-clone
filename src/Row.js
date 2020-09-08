@@ -21,7 +21,7 @@ function Row ({ title, fetchUrl, isLargeRow }) {
 	);
 
 	return (
-		<StyleRow className="row">
+		<StyleRow className={`row ${isLargeRow && 'mt-top'}`}>
 			<h2>{title}</h2>
 			<RowPosters className="row-posters">
 				{movies.map((movie) => (
