@@ -4,10 +4,12 @@ import requests from './api';
 import './styles/App.css';
 import Banner from './Banner';
 import { StyleApp } from './styles/AppStyle';
+import Nav from './Nav';
 
 function App () {
 	return (
 		<StyleApp className="app">
+			<Nav />
 			<Banner />
 			<Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow={true} />
 			<Row title="Trending Now" fetchUrl={requests.fetchTrending} />

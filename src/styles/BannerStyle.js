@@ -47,5 +47,5 @@ export const BannerBtn = styled.button`
 
 export const BannerFade = styled.div`
 	height: 7.4rem;
-	background-image: linear-gradient(360deg, transparent, rgba(37, 37, 37, 0.61), #111);
+	background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, .61), #111);
 `;
