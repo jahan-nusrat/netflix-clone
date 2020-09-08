@@ -19,7 +19,7 @@ function Row ({ title, fetchUrl, isLargeRow }) {
 		},
 		[ fetchUrl ]
 	);
-	console.info(movies);
+
 	return (
 		<StyleRow className="row">
 			<h2>{title}</h2>
